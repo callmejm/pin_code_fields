@@ -541,7 +541,6 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
       child: Container(
         // adding the extra space at the bottom to show the error text from validator
         height: widget.pinTheme.fieldHeight + widget.errorTextSpace,
-        width: _pinTheme.containerWidth ?? MediaQuery.of(context).size.width,
         color: widget.backgroundColor,
         child: Stack(
           alignment: Alignment.bottomCenter,
@@ -600,8 +599,8 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
             ),
             Positioned(
               top: 0,
-              left: 0,
-              right: 0,
+              left: 50,
+              right: 50,
               child: GestureDetector(
                 onTap: () {
                   if (widget.onTap != null) widget.onTap();
