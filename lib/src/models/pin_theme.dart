@@ -37,6 +37,10 @@ class PinTheme {
   /// this defines the shape of the input fields. Default is underlined
   final PinCodeFieldShape shape;
 
+  
+  /// [width] for the pin code field. default is [40.0]
+  final double containerWidth;
+
   const PinTheme.defaults({
     this.borderRadius = BorderRadius.zero,
     this.fieldHeight = 50,
@@ -50,6 +54,7 @@ class PinTheme {
     this.activeFillColor = Colors.green,
     this.selectedFillColor = Colors.blue,
     this.inactiveFillColor = Colors.red,
+    this.containerWidth = 0
   });
 
   factory PinTheme(
@@ -64,7 +69,8 @@ class PinTheme {
       double fieldHeight,
       double fieldWidth,
       double borderWidth,
-      PinCodeFieldShape shape}) {
+      PinCodeFieldShape shape,
+      double containerWidth}) {
     final defaultValues = PinTheme.defaults();
     return PinTheme.defaults(
       activeColor:
@@ -81,6 +87,7 @@ class PinTheme {
       fieldHeight:
           fieldHeight == null ? defaultValues.fieldHeight : fieldHeight,
       fieldWidth: fieldWidth == null ? defaultValues.fieldWidth : fieldWidth,
+      containerWidth: containerWidth == null ? defaultValues.containerWidth : containerWidth,
       inactiveColor:
           inactiveColor == null ? defaultValues.inactiveColor : inactiveColor,
       inactiveFillColor: inactiveFillColor == null

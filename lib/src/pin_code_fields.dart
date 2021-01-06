@@ -541,6 +541,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
       child: Container(
         // adding the extra space at the bottom to show the error text from validator
         height: widget.pinTheme.fieldHeight + widget.errorTextSpace,
+        width: _pinTheme.containerWidth ?? MediaQuery.of(context).size.width,
         color: widget.backgroundColor,
         child: Stack(
           alignment: Alignment.bottomCenter,
