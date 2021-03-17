@@ -144,6 +144,9 @@ class PinCodeTextField extends StatefulWidget {
   /// left and right gap
   final double leftRightGap;
 
+  /// pin field margin left
+  final double fieldMarginLeft;
+
   PinCodeTextField({
     Key key,
     @required this.appContext,
@@ -192,7 +195,8 @@ class PinCodeTextField extends StatefulWidget {
     this.cursorColor,
     this.cursorWidth = 2,
     this.cursorHeight,
-    this.leftRightGap = 50
+    this.leftRightGap = 50,
+    this.fieldMarginLeft = 0
   })  : assert(obscuringCharacter != null && obscuringCharacter.isNotEmpty),
         super(key: key);
 
@@ -645,6 +649,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
           duration: widget.animationDuration,
           width: _pinTheme.fieldWidth,
           height: _pinTheme.fieldHeight,
+          margin: EdgeInsets.only(left: widget.fieldMarginLeft),
           decoration: BoxDecoration(
             color: widget.enableActiveFill
                 ? _getFillColorFromIndex(i)
