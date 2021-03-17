@@ -147,9 +147,6 @@ class PinCodeTextField extends StatefulWidget {
   /// pin field margin left
   final double fieldMarginLeft;
 
-  /// pin field margin left
-  final Key fieldMarginLeft;
-
   PinCodeTextField({
     Key key,
     @required this.appContext,
