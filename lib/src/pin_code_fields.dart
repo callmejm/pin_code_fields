@@ -147,6 +147,8 @@ class PinCodeTextField extends StatefulWidget {
   /// pin field margin left
   final double fieldMarginLeft;
 
+  final Key keyField;
+
   PinCodeTextField({
     Key key,
     @required this.appContext,
@@ -196,7 +198,8 @@ class PinCodeTextField extends StatefulWidget {
     this.cursorWidth = 2,
     this.cursorHeight,
     this.leftRightGap = 50,
-    this.fieldMarginLeft = 0
+    this.fieldMarginLeft = 0,
+    this.keyField
   })  : assert(obscuringCharacter != null && obscuringCharacter.isNotEmpty),
         super(key: key);
 
@@ -558,7 +561,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
               absorbing: true, // it prevents on tap on the text field
               child: AutofillGroup(
                 child: TextFormField(
-                  key: widget.key,
+                  key: widget.keyField,
                   textInputAction: widget.textInputAction,
                   controller: _textEditingController,
                   focusNode: _focusNode,
