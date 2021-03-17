@@ -141,6 +141,9 @@ class PinCodeTextField extends StatefulWidget {
   /// Height of the cursor, default to FontSize + 8;
   final double cursorHeight;
 
+  /// left and right gap
+  final double leftRightGap;
+
   PinCodeTextField({
     Key key,
     @required this.appContext,
@@ -189,6 +192,7 @@ class PinCodeTextField extends StatefulWidget {
     this.cursorColor,
     this.cursorWidth = 2,
     this.cursorHeight,
+    this.leftRightGap = 50
   })  : assert(obscuringCharacter != null && obscuringCharacter.isNotEmpty),
         super(key: key);
 
@@ -599,8 +603,8 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
             ),
             Positioned(
               top: 0,
-              left: 50,
-              right: 50,
+              left: widget.leftRightGap,
+              right: widget.leftRightGap,
               child: GestureDetector(
                 onTap: () {
                   if (widget.onTap != null) widget.onTap();
