@@ -649,7 +649,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
           duration: widget.animationDuration,
           width: _pinTheme.fieldWidth,
           height: _pinTheme.fieldHeight,
-          margin: EdgeInsets.only(left: widget.fieldMarginLeft),
+          margin: EdgeInsets.only(left: i == 0 ? 0 : widget.fieldMarginLeft),
           decoration: BoxDecoration(
             color: widget.enableActiveFill
                 ? _getFillColorFromIndex(i)
