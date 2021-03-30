@@ -606,6 +606,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
                         ? 1
                         : 0.01, // it is a hidden textfield which should remain transparent and extremely small
                   ),
+                  toolbarOptions: ToolbarOptions(paste: true)
                 ),
               ),
             ),
