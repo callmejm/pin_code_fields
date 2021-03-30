@@ -623,12 +623,8 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
                         var data = await Clipboard.getData("text/plain");
                         if (data?.text?.isNotEmpty ?? false) {
                           if (widget.beforeTextPaste != null) {
-                            if (widget.beforeTextPaste(data.text)) {
-                              _showPasteDialog(data.text);
-                            }
-                          } else {
-                            _showPasteDialog(data.text);
-                          }
+                            widget.beforeTextPaste(data.text);
+                          } 
                         }
                       }
                     : null,
